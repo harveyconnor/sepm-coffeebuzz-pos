@@ -4,25 +4,13 @@
       <Card :handleclick="() => openItem('Cappucino')">Cappucino</Card>
     </div>
     <div class="col-xl-3 col-sm-6 mb-3">
-      <div class="card">
-        <div class="card-body">
-          <Card :handleclick="() => openItem('Latte')">Latte</Card>
-        </div>
-      </div>
+      <Card :handleclick="() => openItem('Latte')">Latte</Card>
     </div>
     <div class="col-xl-3 col-sm-6 mb-3">
-      <div class="card">
-        <div class="card-body">
-          <Card :handleclick="() => openItem('Hot Chocolate')">Hot Chocolate</Card>
-        </div>
-      </div>
+      <Card :handleclick="() => openItem('Hot Chocolate')">Hot Chocolate</Card>
     </div>
     <div class="col-xl-3 col-sm-6 mb-3">
-      <div class="card">
-        <div class="card-body">
-          <Card :handleclick="() => openItem('Espresso')">Espresso</Card>
-        </div>
-      </div>
+      <Card :handleclick="() => openItem('Espresso')">Espresso</Card>
     </div>
   </div>
 </template>
