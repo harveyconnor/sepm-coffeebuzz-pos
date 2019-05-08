@@ -4,6 +4,7 @@ import Home from './views/Home.vue';
 import Help from './views/Help.vue';
 import Coffee from './views/Coffee.vue';
 import Sandwiches from './views/Sandwiches.vue';
+import Login from './views/Login.vue';
 
 Vue.use(Router);
 
@@ -31,5 +32,11 @@ export default new Router({
       name: 'sandwiches',
       component: Sandwiches,
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
+    },
+
   ],
 });
