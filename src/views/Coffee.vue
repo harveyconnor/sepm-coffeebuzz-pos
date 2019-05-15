@@ -8,7 +8,7 @@
         <Card :handleclick="() => openItem('Latte')">Latte</Card>
       </div>
       <div class="col-xl-3 col-sm-6 mb-3">
-        <Card :handleclick="() => openItem('Hot Chocolate')">Hot Chocolate</Card>
+        <Card :handleclick="() => openItem('BLah')">Hot Chocolate</Card>
       </div>
       <div class="col-xl-3 col-sm-6 mb-3">
         <Card :handleclick="() => openItem('Espresso')">Espresso</Card>
