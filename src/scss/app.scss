@@ -5,3 +5,11 @@
 .card-clickable {
   cursor: pointer;
 }
+
+tfoot td {
+  font-weight: bold;
+}
+
+.modal-open {
+  padding-right: 0 !important;
+}

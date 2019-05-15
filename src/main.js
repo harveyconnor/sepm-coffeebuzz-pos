@@ -15,6 +15,10 @@ import { createProvider } from './vue-apollo';
 
 Vue.config.productionTip = false;
 
+window.jQuery = require('jquery');
+
+window.$ = window.jQuery;
+
 new Vue({
   router,
   apolloProvider: createProvider(),

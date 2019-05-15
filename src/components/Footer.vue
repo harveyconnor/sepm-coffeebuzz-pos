@@ -2,7 +2,7 @@
   <footer class="sticky-footer">
     <div class="container my-auto">
       <div class="copyright text-center my-auto">
-        <span>Copyright © POS 2019</span>
+        <span> {{ new Date().getFullYear() }} © Copyright POS. All rights reserved.</span>
       </div>
     </div>
   </footer>
