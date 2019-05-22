@@ -16,20 +16,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Cappucino</td>
-                  <td>Size</td>
-                  <td>1</td>
-                  <td>$3.50</td>
+                <tr v-for="(item, i) in items" :key="i">
+                  <td>{{i+1}}</td>
+                  <td>{{item.item}}</td>
+                  <td>{{item.size}}</td>
+                  <td>{{item.quantity}}</td>
+                  <td>${{ item.size === 'L' ? 4.5 * item.quantity : item.size === 'M' ? 4 * item.quantity : 3.5 * item.quantity }}</td>
                 </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="4"/>
-                  <td>$3.50</td>
-                </tr>
-              </tfoot>
             </table>
             <div class="row">
               <div class="col-4">
@@ -70,6 +64,18 @@ export default {
   components: {
     Layout,
     Modal
+  },
+  data() {
+    return {
+      items: []
+    }
+  },
+  mounted() {
+    this.items.push({
+      item: this.$route.params.item,
+      quantity: this.$route.params.quantity,
+      size: this.$route.params.size,
+    })
   },
   methods: {
     openPayment() {      
