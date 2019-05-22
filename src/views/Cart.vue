@@ -38,26 +38,43 @@
                 </a>
               </div>
               <div class="col-8">
-                <a href="#" class="btn btn-primary btn-block">
+                <button @click="openPayment()" class="btn btn-primary btn-block">
                   Confirm order
-                </a>
+                </button>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
+
+    <Modal>
+      <template v-slot:title>Payment</template>
+      <template v-slot:body>Blah</template>
+      <template v-slot:footer>
+          <div>
+            <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Submit Payment</button>
+          </div>
+      </template>
+    </Modal>
+
   </Layout>
 </template>
 
 <script>
 import Layout from '@/components/Layout.vue';
+import Modal from '@/components/ui/Modal';
 
 export default {
   name: 'cart',
   components: {
-    Layout
+    Layout,
+    Modal
   },
+  methods: {
+    openPayment() {      
+      $('#myModal').modal('show');
+    }
+  }
 };
 </script>

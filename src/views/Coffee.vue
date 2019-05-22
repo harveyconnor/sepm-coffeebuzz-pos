@@ -18,20 +18,29 @@
         <Card :handleclick="() => openItem('Espresso')">Espresso</Card>
       </div>
     </div>
-    <Modal>
-      <template v-slot:title>{{item}}</template>
-      <template v-slot:body>Quantity
-       <input type="number" value="1" min="1" max="20" step="1"/>
-      </template>
-      <template v-slot:footer>
-        <div class="col-4">
-          <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Cancel</button>
-        </div>
-        <div class="col-8">
-          <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Confirm</button>
-        </div>
-      </template>      
-    </Modal>
+    
+    <form>
+      <Modal>     
+        <template v-slot:title>{{item}}</template>
+          <template v-slot:body>Quantity
+            <input type="number" value="1" min="1" max="20" step="1"/>
+              <div> 
+                <label class="radio-inline"><input type="radio" name="optradio" checked> S $3.50 </label>
+                <label class="radio-inline"><input type="radio" name="optradio"> M $4.00 </label>
+                <label class="radio-inline"><input type="radio" name="optradio"> L $4.50 </label>
+              </div>
+          </template>
+        <template v-slot:footer>
+          <div class="col-4">
+            <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Cancel</button>
+          </div>
+          <div class="col-8">
+            <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Confirm</button>
+          </div>
+        </template>             
+      </Modal>
+    </form>
+     
   </Layout>
 </template>
 
