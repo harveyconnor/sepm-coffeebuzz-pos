@@ -14,14 +14,9 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: Home,
-    },
-    {
-      path: '/help',
-      name: 'help',
-      component: Help,
+      path: '/login',
+      name: 'login',
+      component: Login,
     },
     {
       path: '/coffee',
@@ -32,11 +27,6 @@ export default new Router({
       path: '/sandwiches',
       name: 'sandwiches',
       component: Sandwiches,
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: Login,
     },
     {
       path: '/cart',
