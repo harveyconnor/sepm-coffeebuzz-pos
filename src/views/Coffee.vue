@@ -23,11 +23,11 @@
       <Modal>     
         <template v-slot:title>{{item}}</template>
           <template v-slot:body>Quantity
-            <input type="number" value="1" min="1" max="20" step="1"/>
+            <input type="number" v-model="quantity" value="1" min="1" max="20" step="1"/>
               <div> 
-                <label class="radio-inline"><input type="radio" name="optradio" checked> S $3.50 </label>
-                <label class="radio-inline"><input type="radio" name="optradio"> M $4.00 </label>
-                <label class="radio-inline"><input type="radio" name="optradio"> L $4.50 </label>
+                <label class="radio-inline"><input v-model="size" type="radio" value="S" name="optradio" checked> S $3.50 </label>
+                <label class="radio-inline"><input type="radio" v-model="size" value="M" name="optradio"> M $4.00 </label>
+                <label class="radio-inline"><input type="radio" v-model="size" value="L" name="optradio"> L $4.50 </label>
               </div>
           </template>
         <template v-slot:footer>
@@ -35,7 +35,7 @@
             <button type="button" class="btn btn-danger btn-block" data-dismiss="modal">Cancel</button>
           </div>
           <div class="col-8">
-            <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Confirm</button>
+            <button @click="confirmOrder" type="button" class="btn btn-primary btn-block" data-dismiss="modal">Confirm</button>
           </div>
         </template>             
       </Modal>
@@ -58,13 +58,18 @@ export default {
   },
   data() {
     return {
-      item: ''
+      item: '',
+      size: 'M',
+      quantity: '1'
     }
   },
   methods: {
     openItem(item) {
       this.item = item;
       $('#myModal').modal('show');
+    },
+    confirmOrder() {
+      this.$router.push({ name: 'cart', params: { quantity: this.quantity, size: this.size, item: this.item } })
     }
   }
 }
