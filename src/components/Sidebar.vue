@@ -24,5 +24,11 @@
         <span>Help</span>
       </router-link>
     </li>
+    <li class="nav-item">
+      <router-link to="/cart" class="nav-link">
+        <i class="fas fa-fw fa-shopping-cart"></i>
+        <span>Cart</span>
+      </router-link>
+    </li>
   </ul>
 </template>
